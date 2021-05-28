@@ -21,8 +21,7 @@ jobs:
           import os
           ref = os.environ['GITHUB_REF']
           prod = os.environ['PRODUCTION_BRANCH']
-          develop = os.environ['DEVELOP_BRANCH']
-          if ref == prod or ref == develop:
+          if ref == prod:
             print('::set-output name=proceed::true')
           else:
             print('::set-output name=proceed::false')
@@ -50,3 +49,7 @@ jobs:
           run: npm ci
         - name: Test action
           run: echo "test action!"
+        - name: Release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          run: npx semantic-release
