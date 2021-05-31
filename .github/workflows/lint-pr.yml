@@ -3,7 +3,7 @@ on:
   pull_request:
 env:
   DEVELOP_BRANCH: refs/heads/develop
-  TARGET_BRANCH: ${{ github.event.action }}
+  TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
 jobs:
   gatekeep-develop:
     name: Determine if we need to check PR title
