@@ -5,27 +5,9 @@ env:
   DEVELOP_BRANCH: develop
   TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
 jobs:
-  gatekeep-develop:
-    name: Determine if we need to check PR title
-    outputs:
-      proceed: ${{ steps.determine_proceed.outputs.proceed }}
-    runs-on: ubuntu-18.04
-    steps:
-      - shell: python
-        id: determine_proceed
-        run: |
-          import os
-          target = os.environ['TARGET_BRANCH']
-          dev = os.environ['DEVELOP_BRANCH']
-          if target == dev:
-            print('::set-output name=proceed::true')
-          else:
-            print('::set-output name=proceed::false')
   lint-pr:
     name: Lint PR titles to ensure that they follow Conventional Commit formatting
     runs-on: ubuntu-18.04
-    needs: [gatekeep-develop]
-    if: needs.gatekeep.outputs.proceed == 'true'
     steps:
       # Please look up the latest version from
       # https://github.com/amannn/action-semantic-pull-request/releases
