@@ -18,13 +18,46 @@
             }
         }],
         ["@semantic-release/release-notes-generator", {
-            "preset": "angular",
-            "parserOpts": {
-                "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
-            },
-            "writerOpts": {
-                "commitsSort": ["subject", "scope"]
-            }
+            "preset": "conventionalcommits",
+            "presetConfig": {
+            "types": [
+                {
+                    "type": "feat",
+                    "hidden": false
+                },
+                {
+                    "type": "fix",
+                    "hidden": false
+                },
+                {
+                    "type": "docs",
+                    "hidden": false
+                },
+                {
+                    "type": "style",
+                    "hidden": false
+                },
+                {
+                    "type": "refactor",
+                    "hidden": false
+                },
+                {
+                    "type": "perf",
+                    "hidden": false
+                },
+                {
+                    "type": "test",
+                    "hidden": false
+                },
+                {
+                    "type": "ci",
+                    "hidden": false
+                },
+                {
+                    "type": "chore",
+                    "hidden": true
+                }
+            ]
         }],
         ["@semantic-release/changelog",{
             "changelogFile": "docs/CHANGELOG.md",
