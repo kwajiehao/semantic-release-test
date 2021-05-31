@@ -1,17 +1,15 @@
 name: lint-pr
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
 env:
   DEVELOP_BRANCH: refs/heads/develop
-  TARGET_BRANCH: ${{ github.pull_request.base.ref }}
+  TARGET_BRANCH: ${{ github.event.action }}
 jobs:
   gatekeep-develop:
     name: Determine if we need to check PR title
     outputs:
       proceed: ${{ steps.determine_proceed.outputs.proceed }}
     runs-on: ubuntu-18.04
-    if: github.event_name == 'push'
     steps:
       - shell: python
         id: determine_proceed
