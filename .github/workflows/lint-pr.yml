@@ -2,12 +2,13 @@ name: lint-pr
 on:
   pull_request:
 env:
-  DEVELOP_BRANCH: develop
+  DEVELOP_BRANCH: master
   TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
 jobs:
   lint-pr:
     name: Lint PR titles to ensure that they follow Conventional Commit formatting
     runs-on: ubuntu-18.04
+    if: ${{ env.DEVELOP_BRANCH == env.TARGET_BRANCH }}
     steps:
       # Please look up the latest version from
       # https://github.com/amannn/action-semantic-pull-request/releases
