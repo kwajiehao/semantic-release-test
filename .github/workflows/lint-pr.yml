@@ -2,7 +2,7 @@ name: lint-pr
 on:
   pull_request:
 env:
-  DEVELOP_BRANCH: master
+  DEVELOP_BRANCH: develop
   TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
 jobs:
   lint-pr:
