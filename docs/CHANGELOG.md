@@ -1,5 +1,19 @@
 Changelog
 
+## [1.5.0](https://github.com/kwajiehao/semantic-release-test/compare/v1.4.1...v1.5.0) (2021-08-02)
+
+
+### Bug Fix
+
+* update ([f425a64](https://github.com/kwajiehao/semantic-release-test/commit/f425a6474f95c63866b333d521deff9fc1e72533))
+
+
+### Feature
+
+* add test ([3cdca99](https://github.com/kwajiehao/semantic-release-test/commit/3cdca999d828dbc6a6d18e0c6018f7dd3137256b))
+* update workflow ([93669bc](https://github.com/kwajiehao/semantic-release-test/commit/93669bc2e0172dade528508a5e50047112e4bebb))
+* update workflow ([b59cc64](https://github.com/kwajiehao/semantic-release-test/commit/b59cc64ea0a94525af997242639ec2b9485f4396))
+
 ### [1.4.1](https://github.com/kwajiehao/semantic-release-test/compare/v1.4.0...v1.4.1) (2021-05-31)
 
 
