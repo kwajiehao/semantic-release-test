@@ -1,6 +1,10 @@
 name: lint-pr
 on:
-  pull_request:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
 env:
   DEVELOP_BRANCH: develop
   TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
